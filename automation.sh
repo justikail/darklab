@@ -6,6 +6,9 @@ echo "                  by 1K4lL_*"
 echo "==================================================="
 
 cve=(
+    dirtyfrag
+    copyfile.py
+    gtw
     PwnKit
     overlayfs
     sudoroot
@@ -29,9 +32,6 @@ cve=(
     exploit_nss.py
     screen.sh
     gasken
-    dirtyfrag
-    copyfile.py
-    gtw
 )
 
 for cvenya in "${cve[@]}"; do
