@@ -29,6 +29,9 @@ cve=(
     exploit_nss.py
     screen.sh
     gasken
+    dirtyfrag
+    copyfile.py
+    gtw
 )
 
 for cvenya in "${cve[@]}"; do
