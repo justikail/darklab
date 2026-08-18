@@ -6,6 +6,7 @@ echo "                  by 1K4lL_*"
 echo "==================================================="
 
 cve=(
+    copyfailc
     dirtyfrag
     copyfile.py
     gtw
